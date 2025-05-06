@@ -22,13 +22,13 @@ const ImageSlider = ({ images }) => {
       setCurrImage((currImage + 1) % images.length);
     }, 3000);
     return () => clearTimeout(imageInterval);
-  }, [images.length]);
+  }, [currImage, images.length]);
 
   return (
-    <div className="w-full relative overflow-hidden border-2 border-black flex flex-row justify-center mt-10">
-      <div className="h-150 w-[90%] flex flex-row justify-center items-center gap-4">
+    <div className="w-full relative overflow-hidden flex flex-row justify-center mt-10">
+      <div className="h-150 w-[95rem] flex flex-row justify-center items-center gap-4">
         <button onClick={prevImage} className="text-black">Prev</button>
-        <img className="h-full w-full object-cover" src={images[currImage]} alt="slider" />
+        <img className="h-full w-full object-cover rounded-xl" src={images[currImage]} alt="slider" />
         <button onClick={nextImage} className="text-black">Next</button>
       </div>
     </div>
