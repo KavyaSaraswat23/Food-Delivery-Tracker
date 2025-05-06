@@ -2,6 +2,6 @@
 
 export default function Home() {
   return (
-    <h1 className=" text-5xl text-center">Kavya Saraswat</h1>
+    <h1 className=" text-5xl text-center text-black">Kavya Saraswat</h1>
   );
 }
