@@ -1,15 +1,26 @@
+'use client'
 import Map from '@/componenets/Map'
-import React from 'react'
+import React, {useState} from 'react'
 
 const Tracker = () => {
   return (
-    <div className='flex flex-row justify-evenly'>
+    <div className='flex flex-row justify-evenly px-0'>
       
-      <div className='border-2 border-black w-[30rem]'>
-        <h1 className='text-black'>Info</h1>
+      <div className='flex flex-col border-2 border-black w-[30rem] mx-0'>
+        <div>
+          <div>
+            <h1>Order ID</h1>
+          </div>
+          <div>
+            <h1>Order List</h1>
+            <table>
+
+            </table>
+          </div>
+        </div>
       </div>
-      <div className='border-2 h-400 w-[50rem] border-black'>
-        {/* <Map /> */}
+      <div className=' h-400 w-[55rem] mx-0'>
+        <Map />
       </div>
       
     </div>

@@ -1,11 +1,15 @@
 import HeroSection from '@/componenets/HeroSection'
 import React from 'react'
+import Offer from '@/componenets/Offer'
+import Options from '@/componenets/Options'
 
 const Restaurants = () => {
   return (
     <div>
-      <h1 className='text-black'>This is Restrqaunts</h1>
+      
       <HeroSection />
+      <Offer />
+      <Options />
     </div>
   )
 }

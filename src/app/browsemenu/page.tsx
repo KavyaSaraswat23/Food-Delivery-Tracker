@@ -2,13 +2,15 @@
 import HeroSection from '@/componenets/HeroSection'
 import Offer from '@/componenets/Offer'
 import React from 'react'
+import Options from '@/componenets/Options'
 
 const BrowseMenu = () => {
   return (
     <div>
-      <h1 className='text-black'>This is Menu</h1>
+      
       <HeroSection />
       <Offer />
+      <Options />
     </div>
   )
 }
