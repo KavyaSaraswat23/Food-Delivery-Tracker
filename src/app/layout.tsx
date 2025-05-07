@@ -1,11 +1,12 @@
-import {useState} from "react"
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../componenets/Navbar"
-import HeroSection from "@/componenets/HeroSection";
-import Main from "@/componenets/Main";
+
+
 import Footer from "@/componenets/Footer";
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,10 +35,10 @@ export default function RootLayout({
       >
     
         <Navbar />
-        <HeroSection />
-        <Main />
-        <Footer />
+        
         {children}
+        
+        <Footer />
       </body>
     </html>
   );
