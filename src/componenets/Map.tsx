@@ -1,4 +1,4 @@
-
+"use client"
 import React, {useState} from 'react'
 import { MapContainer, TileLayer, Marker, Popup, Tooltip, Polyline } from 'react-leaflet'
 import { Icon } from 'leaflet'
