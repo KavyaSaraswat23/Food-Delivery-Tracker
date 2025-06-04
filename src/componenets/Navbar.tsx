@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className='text-3xl text-black text-center m-auto'>
         <h1>Orders</h1>
       </div>
-      <div className='h-15 w-250 flex flex-row justify-between items-center m-auto' >
+      <div className='h-15 w-250 flex flex-row justify-evenly items-center m-auto' >
         {/* Changes to be done here */}
 
         {navLinks.map((link) => {
