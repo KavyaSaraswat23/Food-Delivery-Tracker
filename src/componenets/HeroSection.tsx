@@ -1,7 +1,8 @@
 "use client";
+import { strict } from "assert";
 import React, { useState, useEffect } from "react";
 
-const images = [
+const images: string[] = [
   "https://photos.smugmug.com/Asia/India/i-Pf4hCQr/0/d3d38770/X2/indian-food-dosa-X2.jpg",
   "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/03/snacks-recipes-fb.jpg",
   "https://media.istockphoto.com/id/637790866/photo/100-lamb-greek-burger.jpg?s=612x612&w=0&k=20&c=cYxRAfU7OdjJCK4M7dbH4YUIk7SGqETlDvONBEOATuw=",
@@ -10,7 +11,11 @@ const images = [
   "https://www.china-admissions.com/wp-content/uploads/2020/02/Chinese-food.jpg",
 ];
 
-const ImageSlider = ({ images} ) => {
+type propType = {
+  images: string[]
+}
+
+function ImageSlider({ images }: propType) {
   const [currImage, setCurrImage] = useState(0);
 
   const nextImage = () => {
@@ -37,7 +42,7 @@ const ImageSlider = ({ images} ) => {
       </div>
     </div>
   );
-};
+}
 const HeroSection = () => {
     
   return (
