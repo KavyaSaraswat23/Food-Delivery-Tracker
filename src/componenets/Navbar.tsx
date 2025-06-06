@@ -9,7 +9,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/home" },
     { name: "Restraunts", path: "/restaurants" },
-    { name: "Basket", path: "/browsemenu" },
+    { name: "Basket", path: "/basket" },
     { name: "tracker", path: "/tracker" },
   ]
 
@@ -28,8 +28,8 @@ const Navbar = () => {
             key={link.path}
             href={link.path}
             className={`flex flex-col justify-center items-center h-12 w-30 m-7 transition-colors ${isActive
-                ? 'bg-[#FC8A06] text-white rounded-4xl font-semibold'
-                : 'bg-white text-black'
+              ? 'bg-[#FC8A06] text-white rounded-4xl font-semibold'
+              : 'bg-white text-black'
               }`}
           >
             {link.name}
