@@ -13,38 +13,40 @@ import start from "../images/start.png"
 import end from "../images/end.png"
 
 const mainIcon = L.icon({
-  iconUrl: icon,
-  iconRetinaUrl: iconRetina,
+  iconUrl: icon.src,
+  iconRetinaUrl: iconRetina.src,
 
   iconSize: [25, 41],
   iconAnchor: [12, 41],
 });
 L.Marker.prototype.options.icon = mainIcon;
 const vehicleIcon = new L.Icon({
-  iconUrl: car,
+  iconUrl: car.src,
   iconSize: [32, 32],
 });
 const startPoint = new L.Icon({
-  iconUrl: start,
+  iconUrl: start.src,
   iconSize: [32, 32],
 })
 const endPoint = new L.Icon({
-  iconUrl: end,
+  iconUrl: end.src,
   iconSize: [32, 32],
 })
 
 const Map = () => {
   const [currentPosition, setCurrentPosition] = useState(0); {/* To underStand */}
-  const positions = coordinates.map((point) => [point.latitude,point.longitude,]);
+  const positions: [number, number][] = coordinates.map((point) => [point.latitude,point.longitude,]);
+  const hasCoords = positions.length > 0;
 
   const starting = positions[0];
   const ending = positions[positions.length - 1];
 
   return (
     <div className='h-[100vh]'>
-        <MapContainer
+
+        {hasCoords && <MapContainer
             center={positions[0]}
-            zoom={15}
+            zoom={13}
             style={{height: "100vh", width: "100%"}}
         >
             <TileLayer
@@ -52,7 +54,7 @@ const Map = () => {
 
             />
             <Marker position={positions[currentPosition]} icon={vehicleIcon}>
-                <Popup permanent directions="top" offset={[0, -20]}> 
+                <Popup offset={[0, -20]}> 
                     <div style={{textAlign: 'center', zIndex: 1000}}>
                         Lat: {positions[currentPosition][0].toFixed(5)}  {/* To underStand */}
                         <br />
@@ -81,7 +83,7 @@ const Map = () => {
                 </Tooltip>
             </Polyline>
 
-        </MapContainer>
+        </MapContainer>}
   </div>
   )
 }

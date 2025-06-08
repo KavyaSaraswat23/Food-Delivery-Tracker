@@ -1,19 +1,19 @@
 "use client"
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 type ObjectProps = {
     restaurant: string,
     description: string,
     img: string,
     price: number,
-
+    quantity: number,
 }
 type ResProps = {
     obj: ObjectProps,
 
 }
 const Res = ({ obj }: ResProps) => {
-    
+
     return (
         <div className="">
             <h1 className="text-3xl font-bold mx-4 my-4">{obj.restaurant}</h1>
@@ -22,7 +22,7 @@ const Res = ({ obj }: ResProps) => {
                 <img src={obj.img} alt="" className="mx-4 rounded-full" />
             </div>
             <h1 className="text-xl font-bold mx-14 my-4">{obj.price}</h1>
-            
+
         </div>
     )
 };

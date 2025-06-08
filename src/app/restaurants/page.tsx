@@ -1,20 +1,16 @@
 "use client"
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import foodItems from '@/api/food';
 import Res from '@/componenets/Res';
 
 const Restaurants = () => {
   const [selectIdx, setSelectIdx] = useState(0);
-  // i made changes from here !!!
-  const router = useRouter();
 
-    function addToBasket(obj: Object) {
-      const existingCart = localStorage.getItem('cartItems');
-      let cart = existingCart ? JSON.parse(existingCart) : [];
-      cart.push(obj);
-      localStorage.setItem('cartItems', JSON.stringify(cart));
-      router.push('/basket');
+  function addToBasket(obj: Object) {
+    const existingCart = localStorage.getItem('cartItems');
+    let cart = existingCart ? JSON.parse(existingCart) : [];
+    cart.push(obj);
+    localStorage.setItem('cartItems', JSON.stringify(cart));
 }
   return (
     <div className='flex flex-row p-10'>
