@@ -26,6 +26,10 @@ function ImageSlider({ images }: propType) {
     setCurrImage((currImage - 1 + images.length) % images.length);
   };
 
+  const animation = {
+    transition: 'all ease-in duration-200s'
+  }
+
   useEffect(() => {
     const imageInterval = setTimeout(() => {
       setCurrImage((currImage + 1) % images.length);
@@ -35,20 +39,20 @@ function ImageSlider({ images }: propType) {
 
   return (
     <div className="w-full relative overflow-hidden flex flex-row justify-center mt-10">
-      <div className="h-150 w-[95rem] flex flex-row justify-center items-center gap-4">
-        <button onClick={prevImage} className="text-black">Prev</button>
-        <img className="h-full w-full object-cover rounded-xl" src={images[currImage]} alt="slider" />
-        <button onClick={nextImage} className="text-black">Next</button>
+      <div className="h-150 w-[92rem] flex flex-row justify-center items-center gap-4">
+        <button onClick={prevImage} className="text-black"></button>
+        <img className="h-full w-full object-cover rounded-xl transition" style={animation} src={images[currImage]} alt="slider" />
+        <button onClick={nextImage} className="text-black"></button>
       </div>
     </div>
   );
 }
 const HeroSection = () => {
-    
+
   return (
     <div>
-      <ImageSlider images={images}/>  
-      
+      <ImageSlider images={images} />
+
     </div>
   )
 }

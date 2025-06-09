@@ -16,11 +16,11 @@ const Navbar = () => {
 
   return (
     <div className='flex flex-row justify-center items-center-safe mt-7'>
-      <div className='text-3xl text-black text-center m-auto'>
-        <h1>Orders</h1>
+      <div className='text-black text-center m-auto'>
+        <h1 className='text-5xl font-bold'>Orders<span className='bg-[#FC8A06]'>.in</span></h1>
       </div>
-      <div className='h-15 w-250 flex flex-row justify-evenly items-center m-auto' >
-        {/* Changes to be done here */}
+      <div className='h-15 flex flex-row justify-around items-center m-auto' >
+
 
         {navLinks.map((link) => {
           const isActive = pathName === link.path
@@ -37,10 +37,8 @@ const Navbar = () => {
         })}
 
       </div>
-      <div className=' h-15 w-40 bg-black flex justify-between items-center border-2 border-black rounded-4xl m-auto'>
-
-        <div className=' text-white flex justify-center items-ce'>Login</div>
-
+      <div className='flex justify-center items-center rounded-4xl text-center h-15 w-40 bg-black m-auto'>
+        <h1 className=' border-amber-200 text-white'>Login/Signup</h1>
       </div>
     </div>
   )
