@@ -13,9 +13,9 @@ const Offer = () => {
         return (
             <div className=" bg-cover bg-center h-60 w-100 rounded-xl mt-10" style={img}>
 
-                <div className='relative'>
-                    <p className=' absolute top-40 left-2 text-[#FC8A06] font-bold mt-5 ml-5 text-sm'>Restaurants</p>
-                    <h3 className='absolute top-50 left-2 text-white font-bold mt ml-5'>{name}</h3>
+                <div className='relative bg-gray-50 h-10 mt-50 rounded-b-xl'>
+                    <p className=' absolute left-2 text-[#FC8A06] font-bold mt-5 ml-5 text-sm'>Restaurant</p>
+                    <h3 className='absolute left-2 text-black font-semibold mt ml-5'>{name}</h3>
                 </div>
             </div>
         )

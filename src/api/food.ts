@@ -12,7 +12,7 @@ const foodItems = [
   },
   {
     id: 1,
-    name: "Pizza",
+    name: "Aloo Ke Parathe",
     options: [
       {
         restaurant: "Farm House Extream pizza",
@@ -32,7 +32,7 @@ const foodItems = [
   },
   {
     id: 2,
-    name: "Pizza",
+    name: "Dosa",
     options: [{
       restaurant: "Farm House Extream pizza",
       description: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
@@ -43,7 +43,7 @@ const foodItems = [
   },
   {
     id: 3,
-    name: "Pizza",
+    name: "Daal Bati",
     options: [{
       restaurant: "Farm House Extream pizza",
       description: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",

@@ -10,14 +10,14 @@ const Navbar = () => {
     { name: "Home", path: "/home" },
     { name: "Restraunts", path: "/restaurants" },
     { name: "Basket", path: "/basket" },
-    { name: "tracker", path: "/tracker" },
+    { name: "Tracker", path: "/tracker" },
   ]
 
 
   return (
     <div className='flex flex-row justify-center items-center-safe mt-7'>
       <div className='text-black text-center m-auto'>
-        <h1 className='text-5xl font-bold'>Orders<span className='bg-[#FC8A06]'>.in</span></h1>
+        <h1 className='text-5xl font-bold'>Orders<span className='bg-[#FC8A06]'>.In</span></h1>
       </div>
       <div className='h-15 flex flex-row justify-around items-center m-auto' >
 
