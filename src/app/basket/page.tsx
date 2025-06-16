@@ -14,9 +14,15 @@ type ResProps = {
 }
 // quantity additon is left for now
 
+type Status = {
+    order: boolean,
+  }
+  const isOrdered: Status = {
+    order: false
+  }
 
 const Basket = () => {
-
+  const [orderCart, setOrderCart] = useState<ObjectProps[]>([]);
   const [cartItems, setCartItems] = useState<ObjectProps[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
@@ -29,27 +35,25 @@ const Basket = () => {
       }
     })
     setCartItems(updatedCart)
+    
     localStorage.setItem('cartItems', JSON.stringify(updatedCart));
   }
-
   const finalOrder = () => {
+    setOrderCart(cartItems);
+
+    
     setCartItems([]);
     localStorage.setItem('cartItems', JSON.stringify([]));
-    return (
-      <div>
-        <form action="">
-          
-        </form>
-      </div>
-    )
+    isOrdered.order = true
   }
-
   useEffect(() => {
     const items = localStorage.getItem('cartItems');
     if (items) {
       try {
         const parsed: ObjectProps[] = JSON.parse(items);
+        
         setCartItems(parsed);
+      
       } catch (e) {
         console.error('Error parsing cart items', e);
       }
@@ -83,7 +87,6 @@ const Basket = () => {
 
             <button className='text-white bg-black font-semibold rounded-lg w-30 mx-5 my-4' onClick={() => {
               deleteFood(idx)
-              console.log(cartItems)
             }}>Remove Item</button>
           </div>
         ))}
@@ -94,4 +97,8 @@ const Basket = () => {
     </div>
   );
 };
-export default Basket
+
+// To get the last order from localStorage (anywhere in your app)
+export {isOrdered};
+
+export default Basket;

@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import foodItems from '@/api/food';
+import foodItems from '@/pages/food';
 import Res from '@/componenets/Res';
 import k from '@/images/k.png'
 import y from '@/images/y.png'
