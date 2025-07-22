@@ -1,5 +1,4 @@
 "use client";
-import { strict } from "assert";
 import React, { useState, useEffect } from "react";
 
 const images: string[] = [
@@ -25,11 +24,6 @@ function ImageSlider({ images }: propType) {
   const prevImage = () => {
     setCurrImage((currImage - 1 + images.length) % images.length);
   };
-
-  const animation = {
-    transition: 'all ease-in duration-200s'
-  }
-
   useEffect(() => {
     const imageInterval = setTimeout(() => {
       setCurrImage((currImage + 1) % images.length);
@@ -52,7 +46,6 @@ const HeroSection = () => {
   return (
     <div>
       <ImageSlider images={images} />
-
     </div>
   )
 }
