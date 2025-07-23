@@ -36,7 +36,7 @@ const Navbar = () => {
 
     useEffect(() => {
         getUserDetails();
-        if (!data){
+        if (!data) {
             router.push('/login')
         }
     }, []);

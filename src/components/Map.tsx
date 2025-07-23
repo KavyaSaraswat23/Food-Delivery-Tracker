@@ -21,11 +21,11 @@ const startPoint = new L.Icon({
 })
 
 const RecenterMap = ({ position }: { position: [number, number] }) => {
-  const map = useMap();
-  useEffect(() => {
-    map.setView(position);
-  }, [position]);
-  return null;
+    const map = useMap();
+    useEffect(() => {
+        map.setView(position);
+    }, [position]);
+    return null;
 };
 
 const Map = () => {
@@ -33,38 +33,38 @@ const Map = () => {
 
     useEffect(() => {
         if (!navigator.geolocation) {
-        console.error('Geolocation not supported');
-        return;
+            console.error('Geolocation not supported');
+            return;
         }
 
         const watcher = navigator.geolocation.watchPosition(
-        (pos) => {
-            const { latitude, longitude } = pos.coords;
-            setPosition([latitude, longitude]);
-        },
-        (err) => console.error('Error tracking location', err),
-        {
-            enableHighAccuracy: true,
-            maximumAge: 1000,
-            timeout: 5000,
-        }
+            (pos) => {
+                const { latitude, longitude } = pos.coords;
+                setPosition([latitude, longitude]);
+            },
+            (err) => console.error('Error tracking location', err),
+            {
+                enableHighAccuracy: true,
+                maximumAge: 1000,
+                timeout: 5000,
+            }
         );
         return () => navigator.geolocation.clearWatch(watcher);
     }, []);
 
     return (
         <div className='h-[90vh] w-[100vh]'>
-    
+
             {position ? <MapContainer
                 center={position}
                 zoom={15}
                 style={{ height: "90vh", width: "100%" }}
             >
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 <Marker position={position} icon={startPoint}></Marker>
-                <RecenterMap position={position}/>
+                <RecenterMap position={position} />
             </MapContainer>
-            : <p>Fetching your live location...</p>}
+                : <p>Fetching your live location...</p>}
         </div>
     )
 }
