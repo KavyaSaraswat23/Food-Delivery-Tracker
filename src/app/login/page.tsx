@@ -47,7 +47,7 @@ export default function Login(){
 
                 <label htmlFor="password">Password</label>
                 <input className="border" type="text" name="" value={user.password} onChange={(e) => setUser({...user, password: e.target.value})} id="" />
-                <button className={`rounded-2xl h-10 w-25 ${buttonDisabled? "bg-amber-700": "bg-[#FC8A06]"}`} onClick={login}>Login</button>
+                <button className={`h-10 w-25 my-2 ${buttonDisabled? "bg-amber-700": "bg-[#FC8A06]"}`} onClick={login}>Login</button>
                 <h2>Don't have an account? click here <span className="font-bold"><Link href="/signup">signup</Link></span></h2>       
                 < Toaster/>
             </div>
