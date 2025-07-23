@@ -1,7 +1,5 @@
 import { NextResponse, NextRequest } from 'next/server'
 
-// This function can be marked `async` if using `await` inside
-
 // for redirecting
 export function middleware(request: NextRequest) {
     const path = request.nextUrl.pathname;
@@ -19,8 +17,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     '/',
-    '/restaurant',
-    '/profile',
     '/login',
     '/signup',
     

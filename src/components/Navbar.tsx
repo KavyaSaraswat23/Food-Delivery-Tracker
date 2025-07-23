@@ -27,6 +27,7 @@ const Navbar = () => {
     const logout = async () => {
         try {
             await axios.get("/api/auth/logout");
+            setData("");
             router.push('/login');
         } catch (err: any) {
             console.log(err.message);
