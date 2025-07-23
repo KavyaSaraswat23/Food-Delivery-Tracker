@@ -9,7 +9,6 @@ export default function Profile() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Only run on /profile, not on /profile/[name]
         if (pathname !== "/restaurant") return;
 
         const getUserDetails = async () => {
@@ -33,6 +32,5 @@ export default function Profile() {
         return <div className="text-5xl text-center font-bold">Loading your Profile...</div>;
     }
 
-    // Optionally render something if user is not found
     return <div>User not found.</div>;
 }

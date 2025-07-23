@@ -56,19 +56,19 @@ const Tracker = () => {
                 <h2 className='text-2xl font-bold my-4'>Order Items:</h2>
                 <div className='border-2 rounded-2xl'>
                     {order.map((food, idx) => {
-                    return (
-                        <div key={idx} className='border rounded-2xl'>
-                            <h2 className='text-xl font-semibold ml-5'>Price {food.restaurant}</h2>
-                            <div className='flex flex-row justify-around'>
+                        return (
+                            <div key={idx} className='border rounded-2xl'>
+                                <h2 className='text-xl font-semibold ml-5'>Price {food.restaurant}</h2>
+                                <div className='flex flex-row justify-around'>
 
-                                <h2 className='text-xl font-semibold mt-5'>${food.unitPrice}</h2>
-                                <img src={food.img} alt="" className='h-20 w-20 rounded-2xl'/>
+                                    <h2 className='text-xl font-semibold mt-5'>${food.unitPrice}</h2>
+                                    <img src={food.img} alt="" className='h-20 w-20 rounded-2xl' />
+                                </div>
                             </div>
-                        </div>
-                    )
+                        )
                     })}
                 </div>
-                
+
             </div>
             <div className=' h-200 w-[54rem] mx-0 '>
                 <Map />

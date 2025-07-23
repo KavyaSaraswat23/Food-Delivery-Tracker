@@ -1,4 +1,4 @@
-import {connect} from "@/db/index";
+import { connect } from "@/db/index";
 import User from "@/models/usermodels";
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
@@ -8,22 +8,22 @@ import jwt from "jsonwebtoken";
 connect();
 
 export async function POST(request: NextRequest) {
-    try{
+    try {
         const reqBody = await request.json();
-        const {email, password} = reqBody;
+        const { email, password } = reqBody;
         console.log(reqBody);
 
-        const user = await User.findOne({email: email});
-        if (!user){
-            return NextResponse.json({error: "User does not exist"},
-                {status: 400}
+        const user = await User.findOne({ email: email });
+        if (!user) {
+            return NextResponse.json({ error: "User does not exist" },
+                { status: 400 }
             )
         }
 
         const validPassword = await bcryptjs.compare(password, user.password);
-        if (!validPassword){
-            return NextResponse.json({error: "Invalid password"},
-                {status: 400}
+        if (!validPassword) {
+            return NextResponse.json({ error: "Invalid password" },
+                { status: 400 }
             )
         }
         // create token data !!
@@ -40,12 +40,13 @@ export async function POST(request: NextRequest) {
             success: true,
         });
         response.cookies.set("token", token, {
-            httpOnly: true});
-            
+            httpOnly: true
+        });
+
         return response;
-    }catch(err: any) {
-        return NextResponse.json({error: err.message},
-            {status: 500})
+    } catch (err: any) {
+        return NextResponse.json({ error: err.message },
+            { status: 500 })
     }
-    
+
 }

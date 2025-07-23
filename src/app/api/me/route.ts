@@ -6,16 +6,17 @@ import { connect } from "@/db/index";
 connect();
 // check here
 export async function GET(request: NextRequest) {
-    try{
+    try {
         const userId = await getTokenData(request);
-        const user = await User.findOne({_id: userId}).
-        select("-password ");
-        return NextResponse.json({message: 'User found',
+        const user = await User.findOne({ _id: userId }).
+            select("-password ");
+        return NextResponse.json({
+            message: 'User found',
             data: user,
         })
-    }catch(err: any) {
-        return NextResponse.json({error: err.message},
-            {status: 400}
+    } catch (err: any) {
+        return NextResponse.json({ error: err.message },
+            { status: 400 }
         );
     }
 }

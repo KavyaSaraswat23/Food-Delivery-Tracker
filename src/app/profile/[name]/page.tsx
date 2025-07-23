@@ -78,7 +78,6 @@ export default function UserProfile() {
     }
     return (
         <div>
-            {/* <h1 className="text-black text-3xl">Hello <span className="text-[#FCA809] font-bold ">{user}</span></h1> */}
             <ImageSlider images={images} />
             <div className='flex justify-center items-center'>
                 <div className='flex w-[90rem] justify-between items-center'>

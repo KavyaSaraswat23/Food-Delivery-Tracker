@@ -1,4 +1,3 @@
-import { error } from "console";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -13,10 +12,10 @@ export async function GET() {
         });
 
         return response
-    }catch(err: any){
-        return NextResponse.json({error: err.message},
-            {status: 500}
+    } catch (err: any) {
+        return NextResponse.json({ error: err.message },
+            { status: 500 }
         );
     }
-    
+
 }

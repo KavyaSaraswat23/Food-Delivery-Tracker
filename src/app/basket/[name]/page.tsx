@@ -56,17 +56,17 @@ const Basket = () => {
         const total = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
         setTotalPrice(total);
     }, [cartItems]);
-    if (payment && cartItems.length === 0){
+    if (payment && cartItems.length === 0) {
         return (
             <div className="flex justify-center items-center h-190 w-full ">
                 <h1 className='text-3xl font-bold'>Your Order is Recived ✅</h1>
             </div>
         )
-    }else if (cartItems.length === 0) {
+    } else if (cartItems.length === 0) {
         return (
-        <div className="flex justify-center items-center h-190 w-full ">
-            <h1 className='text-3xl font-bold'>Your Basket is empty</h1>
-        </div>);
+            <div className="flex justify-center items-center h-190 w-full ">
+                <h1 className='text-3xl font-bold'>Your Basket is empty</h1>
+            </div>);
     }
     return (
         <div className='flex flex-col justify-center items-center'>

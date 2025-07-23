@@ -32,6 +32,5 @@ export default function Profile() {
         return <div className="text-5xl text-center font-bold">Loading your Profile...</div>;
     }
 
-    // Optionally render something if user is not found
     return <div>User not found.</div>;
 }
