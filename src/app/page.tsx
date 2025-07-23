@@ -1,7 +1,11 @@
-
+''
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <h1 className=" text-5xl text-center text-black">Kavya Saraswat</h1>
+    <div className="min-h-screen p-8 pb-20 gap-16">
+      
+      <h1 className="">Kavya</h1>
+    </div>
   );
 }

@@ -10,14 +10,14 @@ export default function Profile() {
 
     useEffect(() => {
         // Only run on /profile, not on /profile/[name]
-        if (pathname !== "/basket") return;
+        if (pathname !== "/restaurant") return;
 
         const getUserDetails = async () => {
             try {
                 const res = await axios.get("/api/me");
                 const name = res.data?.data?.name;
                 if (name) {
-                    router.replace(`/basket/${name}`);
+                    router.replace(`/restaurant/${name}`);
                 } else {
                     setLoading(false);
                 }

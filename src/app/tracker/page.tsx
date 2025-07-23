@@ -1,48 +1,37 @@
 'use client'
-import Map from '@/componenets/Map';
-import React, { useEffect, useState } from 'react';
-import { isOrdered } from '../basket/page';
+import { useEffect, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
+import axios from "axios";
 
+export default function Profile() {
+    const router = useRouter();
+    const pathname = usePathname();
+    const [loading, setLoading] = useState(true);
 
-const Tracker = () => {
+    useEffect(() => {
+        if (pathname !== "/tracker") return;
 
-  function orderId(): number | null{
-    if (isOrdered.order){
-      const k = Math.floor(Math.random() * 9000000000) + 1000000000;
-      return k
-    }return null
+        const getUserDetails = async () => {
+            try {
+                const res = await axios.get("/api/me");
+                const name = res.data?.data?.name;
+                if (name) {
+                    router.replace(`/tracker/${name}`);
+                } else {
+                    setLoading(false);
+                }
+            } catch {
+                setLoading(false);
+            }
+        };
 
-};
-const id = orderId();
+        getUserDetails();
+    }, [pathname, router]);
 
-  return (
-    <div className='flex flex-row justify-evenly px-0'>
+    if (loading) {
+        return <div className="text-5xl text-center font-bold">Loading your Profile...</div>;
+    }
 
-      <div className='flex flex-col border-2 border-black w-[30rem] mx-0'>
-        <div>
-          <div>
-            <h1>Order ID: {id}</h1>
-            
-          </div>
-          <div>
-            <h1>Order List</h1>
-            {/* {orderCart.map((item, idx) => {
-              return (
-                <div key={idx}>
-                  <h1>{item.restaurant}</h1>
-                </div>
-              )
-            })} */}
-            
-          </div>
-        </div>
-      </div>
-      <div className=' h-400 w-[55rem] mx-0'>
-        <Map />
-      </div>
-
-    </div>
-  )
+    // Optionally render something if user is not found
+    return <div>User not found.</div>;
 }
-
-export default Tracker
