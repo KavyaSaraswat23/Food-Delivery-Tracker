@@ -53,7 +53,7 @@ const Tracker = () => {
                 <h2 className='text-2xl font-bold'>Order Id: <span className='font-normal'>{id}</span></h2>
                 <h2 className='text-2xl font-bold'>Owner: <span className='font-normal'>{user}</span></h2>
                 <h2 className='text-2xl font-bold'>Deliver At: <span className='font-normal'>{address}</span></h2>
-                <h2 className='text-2xl font-bold mt-4'>Order Items:</h2>
+                <h2 className='text-2xl font-bold my-4'>Order Items:</h2>
                 <div className='border-2 rounded-2xl'>
                     {order.map((food, idx) => {
                     return (
@@ -61,7 +61,7 @@ const Tracker = () => {
                             <h2 className='text-xl font-semibold ml-5'>Price {food.restaurant}</h2>
                             <div className='flex flex-row justify-around'>
 
-                                <h2 className='text-xl font-semibold mt-5'>{food.unitPrice}</h2>
+                                <h2 className='text-xl font-semibold mt-5'>${food.unitPrice}</h2>
                                 <img src={food.img} alt="" className='h-20 w-20 rounded-2xl'/>
                             </div>
                         </div>

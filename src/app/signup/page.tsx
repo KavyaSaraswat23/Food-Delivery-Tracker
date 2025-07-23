@@ -75,20 +75,20 @@ export default function Signup(){
 
     return (
         <div className="flex justify-center items-center h-213 border">
-            <div className=" w-100 flex flex-col justify-center items-center border h-100 rounded-2xl">
+            <div className=" w-100 flex flex-col justify-center items-center border-2 h-150 rounded-2xl">
                 <h1 className="text-2xl">{loading ? "Wait": "Signup"}</h1>
                 <label htmlFor="username">Name</label>
-                <input className="border" type="text" name="" value={user.name} onChange={(e) => setUser({...user, name: e.target.value})} id="" />
+                <input className="border h-14 w-80 rounded-xl text-center" type="text" name="" value={user.name} onChange={(e) => setUser({...user, name: e.target.value})} id="" />
                 <label htmlFor="email">Email</label>
-                <input className="border" type="text" name="" value={user.email} onChange={(e) => setUser({...user, email: e.target.value})} id="" />
+                <input className="border h-14 w-80 rounded-xl text-center" type="text" name="" value={user.email} onChange={(e) => setUser({...user, email: e.target.value})} id="" />
                 <label htmlFor="phone">Phone Number</label>
-                <input className="border" type="text" min={10} maxLength={10} name="" value={user.phone} onChange={(e) => setUser({...user, phone: e.target.value})} id="" />
+                <input className="border h-14 w-80 rounded-xl text-center" type="text" min={10} maxLength={10} name="" value={user.phone} onChange={(e) => setUser({...user, phone: e.target.value})} id="" />
                 <label htmlFor="address" >Address</label>
-                <input className="border" type="text" name="" value={user.address} onClick={handleAddressClick} onChange={(e) => setUser({...user, address: e.target.value})} id=""/>
+                <input className="border h-14 w-80 rounded-xl text-center" type="text" name="" value={user.address} onClick={handleAddressClick} onChange={(e) => setUser({...user, address: e.target.value})} id=""/>
                 <label htmlFor="password">Password</label>
-                <input className="border" type="text" name="" value={user.password} onChange={(e) => setUser({...user, password: e.target.value})} id="" />
-                <button className={`rounded-2xl h-10 w-25 ${buttonDisabled ? "bg-amber-700": "bg-[#FC8A06]"}`} onClick={signup}>Signup</button>
-                <h2>Have an account? click here <span className="font-bold"><Link href="/login">login</Link></span></h2>
+                <input className="border h-14 w-80 rounded-xl text-center" type="text" name="" value={user.password} onChange={(e) => setUser({...user, password: e.target.value})} id="" />
+                <button className={`rounded-2xl my-4 h-10 w-25 ${buttonDisabled ? "bg-amber-700": "bg-[#FC8A06]"}`} onClick={signup}>Signup</button>
+                <h2 className="font-medium">Have an account? click here <span className="font-bold"><Link href="/login">login</Link></span></h2>
                 
             </div>
             <Toaster />
